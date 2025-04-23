@@ -4,6 +4,7 @@ on:
   push:
     branches: [ "main" ]
   pull_request:
+    # Trigger when a PR is made *to* main from any branch:
     branches: [ "main" ]
   schedule:
     - cron: '21 11 * * 4'
