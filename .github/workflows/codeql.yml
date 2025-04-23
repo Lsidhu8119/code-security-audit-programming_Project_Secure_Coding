@@ -1,13 +1,12 @@
-name: "CodeQL Python Scan"
+name: "CodeQL JavaScript Scan"
 
 on:
   push:
     branches: [ "main" ]
   pull_request:
-    # Trigger when a PR is made *to* main from any branch:
     branches: [ "main" ]
   schedule:
-    - cron: '21 11 * * 4'
+    - cron: '21 11 * * 4' 
 
 permissions:
   contents: read
@@ -15,15 +14,15 @@ permissions:
 
 jobs:
   analyze:
-    name: Analyze (python)
+    name: Analyze (JavaScript)
     runs-on: ubuntu-latest
 
     strategy:
       fail-fast: false
       matrix:
         include:
-          - language: 'python'
-            build-mode: 'none'
+          - language: 'javascript'
+            build-mode: 'none' 
 
     steps:
       - name: Checkout repository
