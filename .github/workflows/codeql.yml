@@ -6,12 +6,12 @@ on:
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron: '21 11 * * 4'  # Weekly scan
+    - cron: '21 11 * * 4'  # Weekly scan every Thursday
 
 permissions:
   contents: read
   security-events: write
-  actions: write  
+  actions: read           
 
 jobs:
   analyze:
