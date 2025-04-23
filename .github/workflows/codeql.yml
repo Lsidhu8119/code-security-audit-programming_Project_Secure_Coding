@@ -6,11 +6,12 @@ on:
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron: '21 11 * * 4' 
+    - cron: '21 11 * * 4'  # Weekly scan
 
 permissions:
   contents: read
   security-events: write
+  actions: write  
 
 jobs:
   analyze:
@@ -22,7 +23,7 @@ jobs:
       matrix:
         include:
           - language: 'javascript'
-            build-mode: 'none' 
+            build-mode: 'none'
 
     steps:
       - name: Checkout repository
